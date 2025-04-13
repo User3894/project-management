@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الموارد المصغر</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- رابط مكتبة three.js من CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>نظام إدارة الموارد المصغر</h1>
+            <div id="threejs-container"></div>
+        </header>
+
+        <nav>
+            <button class="nav-button active" data-section="dashboard">لوحة التحكم</button>
+            <button class="nav-button" data-section="employees">الموظفون</button>
+            <button class="nav-button" data-section="projects">المشاريع</button>
+            <!-- أضف المزيد من الأقسام هنا حسب الحاجة -->
+        </nav>
+
+        <main id="content-area">
+            <!-- قسم لوحة التحكم (مثال) -->
+            <section id="dashboard-section" class="content-section active">
+                <h2>لوحة التحكم الرئيسية</h2>
+                <p>مرحباً بك في نظام إدارة الموارد المصغر. استخدم الأزرار أعلاه للتنقل بين الأقسام.</p>
+                <div class="stats">
+                     <div class="stat-card">
+                        <h3>إجمالي الموظفين</h3>
+                        <p id="total-employees">0</p>
+                    </div>
+                     <div class="stat-card">
+                        <h3>إجمالي المشاريع</h3>
+                        <p id="total-projects">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم الموظفين -->
+            <section id="employees-section" class="content-section">
+                <h2>إدارة الموظفين</h2>
+                <form id="add-employee-form">
+                    <h3>إضافة موظف جديد</h3>
+                    <div class="form-group">
+                        <label for="employee-name">اسم الموظف:</label>
+                        <input type="text" id="employee-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-department">القسم:</label>
+                        <input type="text" id="employee-department" required>
+                    </div>
+                    <button type="submit">إضافة موظف</button>
+                </form>
+                <div class="list-container">
+                    <h3>قائمة الموظفين</h3>
+                    <ul id="employee-list">
+                        <!-- سيتم ملء القائمة بواسطة JavaScript -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- قسم المشاريع -->
+            <section id="projects-section" class="content-section">
+                <h2>إدارة المشاريع</h2>
+                 <form id="add-project-form">
+                    <h3>إضافة مشروع جديد</h3>
+                    <div class="form-group">
+                        <label for="project-name">اسم المشروع:</label>
+                        <input type="text" id="project-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-status">الحالة:</label>
+                         <select id="project-status" required>
+                            <option value="جديد">جديد</option>
+                            <option value="قيد التنفيذ">قيد التنفيذ</option>
+                            <option value="مكتمل">مكتمل</option>
+                            <option value="متوقف">متوقف</option>
+                        </select>
+                    </div>
+                    <button type="submit">إضافة مشروع</button>
+                </form>
+                 <div class="list-container">
+                     <h3>قائمة المشاريع</h3>
+                    <ul id="project-list">
+                        <!-- سيتم ملء القائمة بواسطة JavaScript -->
+                    </ul>
+                 </div>
+            </section>
+
+             <!-- أضف المزيد من الأقسام هنا -->
+
+        </main>
+
+        <footer>
+            <p>© 2023 نظام إدارة الموارد المصغر</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
